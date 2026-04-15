@@ -1,6 +1,6 @@
 # Projeto: Site de Identificação (Flask + HTML)
 
-Este é um projeto prático desenvolvido para treinar a criação e integração de sites utilizando **Python** no backend e **HTML** no frontend. 
+Este é um projeto prático desenvolvido para treinar a criação e integração de sites utilizando **Python** no backend e **HTML** com frontend. 
 
 ## 🚀 Sobre o Projeto
 A ideia surgiu como um desafio pessoal para aplicar conhecimentos de lógica e web design. Após conversar com meu professor, decidi desenvolver esta aplicação para apresentar em sala de aula e demonstrar o funcionamento de uma aplicação web real.
