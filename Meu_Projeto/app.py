@@ -12,32 +12,33 @@ def sistema_acesso(): #definição da função 'index', que será executada quan
 #Entrada
         nome = request.form.get("nome") #nome do usuario
         idade = int(request.form.get("idade"))#idade do usuario
-        cadastro = request.form.get("cadastro") #cadastro do usuario
+        cadrastro = request.form.get("cadastro") #cadastro do usuario
 
 # saida
         idade_input = request.form.get("idade") 
         if idade_input:
             idade = int(idade_input) #converte a entrada de idade para um número inteiro
                 #maior de idade e tem cadastro
-            if idade >= 18 and cadastro == "sim":
-                mensagem = f"acesso permitido, tem cadastro, e é maior de idade: {nome}!"
+            if idade >= 18 and cadrastro == "sim":
+                mensagem = f"acesso permitido, tem cadrastro, e é maior de idade: {nome}!"
                 #menor de idade, mas tem cadastro
-            elif idade < 18 and cadastro == "sim":
+            elif idade < 18 and cadrastro == "sim":
                 mensagem = f" você é menor de idade, mas tem cadastro: {nome}!\n poderá entrar, mas com acompanhante apenas. "
                 #menor de idade e não tem cadastro
-            elif idade < 18 and cadastro == "não":
+            elif idade < 18 and cadrastro == "não":
                 mensagem = f"acesso negado, não tem cadastro e é menor de idade: {nome}!"
                 #maior de idade, mas não tem cadastro
-            elif idade >= 18 and cadastro == "não":
-                mensagem = "acesso permitido tem mais de 18 anos, no entanto não \n tem o cadastro, faça o cadastro ao entrar."
+            elif idade >= 18 and cadrastro == "não":
+                mensagem = "acesso permitido tem mais de 18 anos, no entanto não \n tem o cadrastro, faça o cadrastro ao entrar."
+
+      
+
 
     return render_template('index.html', resposta=mensagem) #renderiza o arquivo 'index.html' e passa a variável 'mensagem' para o
                                                             # template, permitindo que ela seja usada dentro do arquivo HTML.
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
 
 
 

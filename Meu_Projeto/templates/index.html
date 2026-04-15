@@ -3,26 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <title>Sistema De Acesso</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body class="corpo-do-projeto">
-    <div class="interface">
-        <h1>BEM-VINDO</h1>
-        <h2>SISTEMA DE ACESSO</h2>
-        <form method="POST">
-            <p>  <input type="text" name="nome" placeholder="Digite seu nome" required> </p>
-            <p>  <input type="number" name="idade" placeholder="Digite sua idade" required> </p>
-            <p>  <input type="text" name="cadastro" placeholder="Digite se tem cadastro" required> </p>
+<body style="font-family: Arial; text-align: center; background-color: #f0f0f0;">
 
-            <button type="submit">Enviar</button>
-        </form>
+    
+    <h1>SISTEMA DE ACESSO</h1>
+    <hr>
+
+
+    <form method="POST">
+
+        <p>  <input type="text" name="nome" placeholder="Digite seu nome" required> <p>
+
+        <p>  <input type="number" name="idade" placeholder="Digite sua idade" required> <p>
+
+        <p>  <input type="text" name="cadastro" placeholder="Digite seu cadastro (sim  ou não)" required> <p>
+
+        <button type="submit" style="padding: 10px 20px; cursor: pointer;">Enviar</button>
+    
+    </form>
+
+    <hr>
+    
+
+    <!-- aqui  aparecerar o que o python prosesou -->>
+
+    {% if resposta %}
+        <div style=" background-color: white; padding: 20px; display: inline-block; border-radius: 10px; border: 1px solid #ccc;" >
+            <h3>Resposta:</h3>
+            <p>{{resposta}}<p>
+
         </div>
-        <!-- aqui  aparecerar o que o python prosesou -->
-        {% if resposta %}
-            <div class="caixa-resposta">
-                <h3>{{ resposta }}</h3>
-            </div>
-        {% endif %}
-    </div>
+       
+    {% endif %}
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
