@@ -2,66 +2,34 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema De Acesso</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body style="font-family: Arial; text-align: center; background-color: #f0f0f0;">
+<body>
 
-    
-    <h1>SISTEMA DE ACESSO</h1>
-    <hr>
+    <form method="POST"><!--Entrada-->
+        <h1>Bem-vindo</h1>
+        <h2>SISTEMA DE ACESSO</h2>
+        
+        <input type="text" name="nome" placeholder="Digite seu nome" required>
+        <input type="number" name="idade" placeholder="Digite sua idade" required>
+        <input type="text" name="cadastro" placeholder="Digite seu cadastro (sim ou não)" required>
+        
+        <button type="submit">Enviar</button>
 
-
-    <form method="POST">
-
-        <p>  <input type="text" name="nome" placeholder="Digite seu nome" required> <p>
-
-        <p>  <input type="number" name="idade" placeholder="Digite sua idade" required> <p>
-
-        <p>  <input type="text" name="cadastro" placeholder="Digite seu cadastro (sim  ou não)" required> <p>
-
-        <button type="submit" style="padding: 10px 20px; cursor: pointer;">Enviar</button>
-    
+        <hr>
+        <!-- Processamento de Dados -->
+         <!--saida-->
+        {% if resposta %}
+            <div class="resultado">
+                <h3>Processamento De Dados.</h3>
+                <p>{{ resposta }}</p>
+            </div>
+        {% endif %}
     </form>
 
-    <hr>
-    
-
-    <!-- aqui  aparecerar o que o python prosesou -->>
-
-    {% if resposta %}
-        <div style=" background-color: white; padding: 20px; display: inline-block; border-radius: 10px; border: 1px solid #ccc;" >
-            <h3>Resposta:</h3>
-            <p>{{resposta}}<p>
-
-        </div>
-       
-    {% endif %}
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
